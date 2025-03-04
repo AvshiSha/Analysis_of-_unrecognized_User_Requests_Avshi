@@ -30,7 +30,7 @@ nltk.download('stopwords')
        "data_file": "requests.csv",
        "output_file": "output.json",
        "num_of_representatives": 3,
-       "min_cluster_size": 5,
+       "min_cluster_size": 10,
        "example_solution_file": "example_solution.json"
    }
    ```
