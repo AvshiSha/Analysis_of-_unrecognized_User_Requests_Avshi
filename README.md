@@ -1,4 +1,4 @@
-# Analysis_of_unrecognized_User_Requests_Avshi
+# Analysis_of_unrecognized_User_Requests
 
 This project clusters user requests based on semantic similarity using **sentence embeddings** and **cosine similarity metrics**. It further identifies key representatives for each cluster and assigns intuitive names based on common phrases.
 
