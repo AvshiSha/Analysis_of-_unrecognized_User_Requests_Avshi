@@ -1,19 +1,19 @@
-# Analysis_of_unrecognized_User_Requests
+# Clustering_Unrecognized_User_Requests
 
-This project clusters user requests based on semantic similarity using **sentence embeddings** and **cosine similarity metrics**. It further identifies key representatives for each cluster and assigns intuitive names based on common phrases.
+This project groups similar user requests together to quickly reveal common themes. It uses simple natural language processing (NLP) techniques to compare sentences and cluster those with similar meanings, even if you’re not an NLP expert.
 
 ## Features
-- **Reads requests from a CSV file** and preprocesses them.
-- **Generates embeddings** using the `all-MiniLM-L6-v2` SentenceTransformer model.
-- **Performs clustering** using cosine similarity with dynamic thresholding.
-- **Selects key representatives** within each cluster using a centroid-based greedy approach.
-- **Assigns cluster names** based on frequently occurring phrases.
-- **Saves the results** in a structured JSON format.
-- **Evaluates the clustering results** against a provided reference solution.
+- Reads user requests from a CSV file.
+- Converts each request into a numerical format using a pre-trained model.
+- Group similar requests based on their meaning.
+- Selects a few representative requests from each group.
+- Assigns an intuitive name to each cluster based on common phrases.
+- Saves the results in a JSON file.
+- Optionally compares the results with a reference solution.
 
 ## Installation
-### Prerequisites
-Ensure you have Python installed along with the following dependencies:
+### Requirements
+Make sure you have Python installed. Then, install the necessary packages:
 ```bash
 pip install numpy sentence-transformers scikit-learn nltk
 ```
@@ -24,7 +24,7 @@ nltk.download('stopwords')
 ```
 
 ## Usage
-1. Prepare a configuration file (`config.json`) specifying:
+1. Create a configuration file (`config.json`) with the following structure:
    ```json
    {
        "data_file": "requests.csv",
@@ -34,15 +34,53 @@ nltk.download('stopwords')
        "example_solution_file": "example_solution.json"
    }
    ```
-2. Run the script:
+2. Run the project:
    ```bash
    python main.py
    ```
 
-## Output
-- A **JSON file** containing:
-  - Cluster names
-  - Clustered requests
-  - Representative requests
-  - Unclustered requests
+## Example
+### Input
+Imagine you have a CSV file named `requests.csv` with these contents:
+```
+id, request
+1. How do I activate my card?
+2. I need help activating my card.
+3. How can I change my PIN?
+4. What is the process to reset my passcode?
+```
 
+### Output
+After running the script, you might get an output JSON file (`output.json`) that looks like this:
+```json
+{
+  "cluster_list": [
+    {
+      "cluster_name": "activate my card",
+      "requests": [
+        "How do I activate my card?",
+        "I need help activating my card."
+      ],
+      "representatives": [
+        "How do I activate my card?"
+      ]
+    },
+    {
+      "cluster_name": "change my pin",
+      "requests": [
+        "How can I change my PIN?"
+      ],
+      "representatives": [
+        "How can I change my PIN?"
+      ]
+    }
+  ],
+  "unclustered": [
+    "What is the process to reset my passcode?"
+  ]
+}
+```
+
+Now you can run the project on your data and see how it clusters similar requests!
+
+---
