@@ -88,7 +88,7 @@ def perform_clustering(requests, embeddings, min_size, threshold=0.75):
     cluster_centroids = {cid: np.mean(np.array(embs), axis=0) for cid, embs in clusters_emb.items()}
 
     max_iterations = 20  # Limit number of re-clustering iterations
-    similarity_threshold = 0.712  # New similarity threshold for assigning un-clustered points
+    similarity_threshold = 0.712  # similarity threshold for assigning un-clustered points
     for iteration in range(1, max_iterations + 1):
         i = 0
         unclust_to_clust = 0
