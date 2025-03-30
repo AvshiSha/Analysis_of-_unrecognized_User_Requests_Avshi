@@ -253,6 +253,3 @@ if __name__ == '__main__':
                                   config['output_file'],
                                   config['num_of_representatives'],
                                   config['min_cluster_size'])
-
-    # evaluate_clustering(config['example_solution_file'], config['example_solution_file'])  # invocation example
-    evaluate_clustering(config['example_solution_file'], config['output_file'])
