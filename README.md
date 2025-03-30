@@ -42,11 +42,11 @@ nltk.download('stopwords')
 ### Input
 Imagine you have a CSV file named `requests.csv` with these contents:
 ```
-id, request
-1. How do I activate my card?
-2. I need help activating my card.
-3. How can I change my PIN?
-4. What is the process to reset my passcode?
+id,request
+1,How do I activate my card?
+2,need help activating my card.
+3,How can I change my PIN?
+4,What is the process to reset my passcode?
 ```
 
 ### Output
