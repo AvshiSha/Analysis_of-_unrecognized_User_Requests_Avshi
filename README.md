@@ -1,4 +1,4 @@
-# Clustering_Unrecognized_User_Requests
+# Clustering Unrecognized User Requests
 
 This project groups similar user requests together to quickly reveal common themes. It uses simple natural language processing (NLP) techniques to compare sentences and cluster those with similar meanings, even if you’re not an NLP expert.
 
