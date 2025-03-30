@@ -9,7 +9,6 @@ This project groups similar user requests together to quickly reveal common them
 - Selects a few representative requests from each group.
 - Assigns an intuitive name to each cluster based on common phrases.
 - Saves the results in a JSON file.
-- Optionally compares the results with a reference solution.
 
 ## Installation
 ### Requirements
