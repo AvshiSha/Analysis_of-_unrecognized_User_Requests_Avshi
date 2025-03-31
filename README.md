@@ -23,7 +23,7 @@ nltk.download('stopwords')
 ```
 
 ## Usage
-1. Create a configuration file (`config.json`) with the following structure:
+1. Create a configuration file (config.json) with the following structure. For example, using the sample input below:
    ```json
    {
        "data_file": "requests.csv",
