@@ -1,5 +1,7 @@
 # Clustering Unrecognized User Requests
 
+<img align="right" src=![output](https://github.com/user-attachments/assets/d65e9bee-51ff-4ffc-9394-85e9c783f2aa) alt="Logo" width="150" />
+
 This project groups similar user requests together to quickly reveal common themes. It uses simple natural language processing (NLP) techniques to compare sentences and cluster those with similar meanings, even if you’re not an NLP expert.
 
 ## Features
