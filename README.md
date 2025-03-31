@@ -28,8 +28,8 @@ nltk.download('stopwords')
    {
        "data_file": "requests.csv",
        "output_file": "output.json",
-       "num_of_representatives": 3,
-       "min_cluster_size": 10,
+       "num_of_representatives": 1,
+       "min_cluster_size": 1,
        "example_solution_file": "example_solution.json"
    }
    ```
@@ -44,40 +44,64 @@ Imagine you have a CSV file named `requests.csv` with these contents:
 ```
 id,request
 1,How do I activate my card?
-2,need help activating my card.
+2,Can I cancel a transfer?
 3,How can I change my PIN?
-4,What is the process to reset my passcode?
+4,What is the process to change my pin number?
+5,How can I report a stolen card?
+6,I would like to activate my new card.
+7,I need help activating my card.
+
 ```
 
 ### Output
 After running the script, you might get an output JSON file (`output.json`) that looks like this:
 ```json
+
 {
-  "cluster_list": [
-    {
-      "cluster_name": "activate my card",
-      "requests": [
-        "How do I activate my card?",
-        "I need help activating my card."
-      ],
-      "representatives": [
-        "How do I activate my card?"
-      ]
-    },
-    {
-      "cluster_name": "change my pin",
-      "requests": [
-        "How can I change my PIN?"
-      ],
-      "representatives": [
-        "How can I change my PIN?"
-      ]
-    }
-  ],
-  "unclustered": [
-    "What is the process to reset my passcode?"
-  ]
+    "cluster_list": [
+        {
+            "cluster_name": "activate my card?",
+            "requests": [
+                "how do i activate my card?",
+                "i would like to activate my new card.",
+                "i need help activating my card."
+            ],
+            "representatives": [
+                "how do i activate my card?"
+            ]
+        },
+        {
+            "cluster_name": "cancel a transfer?",
+            "requests": [
+                "can i cancel a transfer?"
+            ],
+            "representatives": [
+                "can i cancel a transfer?"
+            ]
+        },
+        {
+            "cluster_name": "change my pin?",
+            "requests": [
+                "how can i change my pin?",
+                "what is the process to change my pin number?"
+            ],
+            "representatives": [
+                "how can i change my pin?"
+            ]
+        },
+        {
+            "cluster_name": "report a stolen",
+            "requests": [
+                "how can i report a stolen card?"
+            ],
+            "representatives": [
+                "how can i report a stolen card?"
+            ]
+        }
+    ],
+    "unclustered": []
 }
+
 ```
 
 Now you can run the project on your data and see how it clusters similar requests!
