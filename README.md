@@ -30,7 +30,6 @@ nltk.download('stopwords')
        "output_file": "output.json",
        "num_of_representatives": 1,
        "min_cluster_size": 1,
-       "example_solution_file": "example_solution.json"
    }
    ```
 2. Run the project:
